@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio Bolívar - Event Click Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 50px 20px;
+        }
+
+        .counter-container {
+            background-color: white;
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1b3a70;
+        }
+
+        #counter {
+            font-size: 64px;
+            font-weight: bold;
+            color: #1b3a70;
+            margin: 25px 0;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #clickButton {
+            background-color: #1b3a70;
+            color: white;
+        }
+
+        #clickButton:hover {
+            background-color: #28549b;
+        }
+
+        #resetButton {
+            background-color: #dddddd;
+            color: #333333;
+        }
+
+        #resetButton:hover {
+            background-color: #c5c5c5;
+        }
+
+        p {
+            color: #555555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter-container">
+        <h1>Colegio Bolívar</h1>
+        <h2>Event Click Counter</h2>
+        <p>Click the button to increase the counter!</p>
+
+        <div id="counter">0</div>
+
+        <button id="clickButton">Click Me!</button>
+        <button id="resetButton">Reset</button>
+
+        <p>Every click counts!</p>
+    </div>
+
+    <script>
+        let count = 0;
+
+        const counterDisplay = document.getElementById("counter");
+        const clickButton = document.getElementById("clickButton");
+        const resetButton = document.getElementById("resetButton");
+
+        clickButton.addEventListener("click", function () {
+            count++;
+            counterDisplay.textContent = count;
+        });
+
+        resetButton.addEventListener("click", function () {
+            count = 0;
+            counterDisplay.textContent = count;
+        });
+    </script>
+
+</body>
+</html>
